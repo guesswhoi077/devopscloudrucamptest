@@ -18,4 +18,5 @@
 
 Плейбук запускается следующей командой:
 
-&emsp;ansible-playbook ansibleplaybook.yml -K
+&emsp;**ansible-playbook ansibleplaybook.yml -K**
+Будет запрошено пароль от превилигированной учетки.
