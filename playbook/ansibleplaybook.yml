@@ -1,5 +1,5 @@
 ---
-- hosts: <ubuntu hostname>
+- hosts: <hostname>
   become: true
   tasks:
     - name: cloudru user addition
@@ -11,7 +11,6 @@
       ansible.posix.authorized_key:
         user: cloudru
         state: present
-        # past pub key location
         key: "{{ lookup('file', '<pub key location>') }}"
 
     - name: Disable remote login for root
