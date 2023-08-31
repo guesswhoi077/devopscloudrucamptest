@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu1
+- hosts: <ubuntu hostname>
   become: true
   tasks:
     - name: cloudru user addition
