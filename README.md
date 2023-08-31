@@ -5,3 +5,11 @@
 &emsp;email: ha31ev@yandex.ru  
 &emsp;whatsapp: +79372914666  
 &emsp;telegram: @onlyhazart  
+
+Инструкция по применению:
+
+Задание 1:
+
+Перед исполнением укажите в плэйбуке:
+1) Имя хоста/группу хостов заменив **<hostname>**
+2) Путь к публичному ключу под таском "upload user pub key" заменив **<pub key location>**
