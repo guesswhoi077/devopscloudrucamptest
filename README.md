@@ -6,6 +6,7 @@
 &emsp;whatsapp: +79372914666  
 &emsp;telegram: @onlyhazart  
 
+
 Инструкция по применению:
 
 Задание 1:
