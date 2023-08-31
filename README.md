@@ -17,4 +17,5 @@
 2) Путь к публичному ключу под таском "upload user pub key" заменив **<pub key location>**
 
 Плейбук запускается следующей командой:
+
 &emsp;ansible-playbook ansibleplaybook.yml -K
