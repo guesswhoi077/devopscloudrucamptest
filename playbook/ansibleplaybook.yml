@@ -1,0 +1,34 @@
+---
+- hosts: ubuntu1
+  become: true
+  tasks:
+    - name: cloudru user addition
+      user:
+        name: cloudru
+        password: $6$9iOuHMqF1eY1p8y2$k4S1CS1ULRGhNBOAklIUk4RyIxCMP9.d.j5AfsG4.Y61mycaX6wXa/nfvj7ivsapFSW3YEdg5pLmkgPy0UhOq0
+
+    - name: upload user pub key
+      ansible.posix.authorized_key:
+        user: cloudru
+        state: present
+        # past pub key location
+        key: "{{ lookup('file', '<pub key location>') }}"
+
+    - name: Disable remote login for root
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        state: present
+        regexp: '(^PermitRootLogin.*)|(^#PermitRootLogin.*)'
+        line: 'PermitRootLogin no'
+
+    - name: allowing ssh auth by key
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        state: present
+        regexp: '(^PubkeyAuthentication.*)|(^#PubkeyAuthentication.*)'
+        line: 'PubkeyAuthentication yes'
+
+    - name: Restart the SSH daemon
+      ansible.builtin.systemd:
+        state: restarted
+        name: ssh
