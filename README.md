@@ -43,17 +43,18 @@
 После создания кластера, применяются манифесты.
 
 
-&emsp;**kubectl apply -f ./webapp-namespace.yaml**
+&emsp;**kubectl apply -f .\webapp-namespace.yaml**
 
-&emsp;**kubectl apply -f .\DeployMan-webapp.yaml**
+&emsp;**kubectl apply -f .\deployment-webapp.yaml**
 
-&emsp;**kubectl apply -f .\webapp-ClusterIp-service.yaml**
+&emsp;**kubectl apply -f .\webapp-сlusterIp-service.yaml**
 
 
 
-Для проверки веб роиложения
+Для проверки веб проиложения задается перенаправление портов:
 
 &emsp;**kubectl port-forward deployment/webapp 8000:8000 -n webapp-namespace**
 
-http://localhost:8000/hostname
+
+**http://localhost:8000/hostname**
 
