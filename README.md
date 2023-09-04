@@ -36,3 +36,6 @@
 
 &emsp;**docker run -d -p 8000:8000 --name webapp webapp**
 
+**Kubernetes**
+
+Для локального запуска кластера было использовано инструменты Docker Desktop и kind.
