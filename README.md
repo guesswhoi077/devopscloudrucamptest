@@ -44,8 +44,11 @@
 
 
 &emsp;**kubectl apply -f ./webapp-namespace.yaml**
+
 &emsp;**kubectl apply -f .\DeployMan-webapp.yaml**
+
 &emsp;**kubectl apply -f .\webapp-ClusterIp-service.yaml**
+
 
 
 Для проверки веб роиложения
