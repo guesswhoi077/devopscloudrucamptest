@@ -38,4 +38,18 @@
 
 **Kubernetes**
 
-Для локального запуска кластера было использовано инструменты Docker Desktop и kind.
+Для локального запуска кластера было использованы инструменты Docker Desktop и kind. В качестве образа в деплойманте использовалось ранее созданное веб приложение. Для проверки работоспособности проб используется TCP сокет на 8000 порту, а проверка доступности пробы в сети происходит путем отправки запроса HTTP GET.
+
+После создания кластера, применяются манифесты.
+
+&emsp;**kubectl apply -f ./webapp-namespace.yaml**
+&emsp;**kubectl apply -f .\DeployMan-webapp.yaml**
+&emsp;**kubectl apply -f .\webapp-ClusterIp-service.yaml**
+
+
+Для проверки веб роиложения
+
+&emsp;**kubectl port-forward deployment/webapp 8000:8000 -n webapp-namespace**
+
+http://localhost:8000/hostname
+
